@@ -1,12 +1,8 @@
 import jwt from 'jsonwebtoken';
 import bcrypt from 'bcrypt';
 
-const JWT_SECRET =
-  process.env.JWT_SECRET ||
-  'gaurav_strong_jwt_secret_2025_do_not_share_this_in_production';
-const JWT_REFRESH_SECRET =
-  process.env.JWT_REFRESH_SECRET ||
-  'gaurav_refresh_secret_2025_very_secure_fallback';
+const JWT_SECRET = process.env.JWT_SECRET as string;
+const JWT_REFRESH_SECRET = process.env.JWT_REFRESH_SECRET as string;
 
 if (process.env.JWT_SECRET && process.env.JWT_REFRESH_SECRET) {
   console.log('JWT secrets loaded from .env');
